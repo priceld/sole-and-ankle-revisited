@@ -16,14 +16,12 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
       onDismiss={onDismiss}
     >
       <MenuDialogContent aria-label="Navigation menu">
-        <CloseButtonWrapper>
-          <UnstyledButton
-            onClick={onDismiss}
-          >
-            <VisuallyHidden>Dismiss menu</VisuallyHidden>
-            <Icon id="close" />
-          </UnstyledButton>
-        </CloseButtonWrapper>
+        <CloseButton
+          onClick={onDismiss}
+        >
+          <VisuallyHidden>Dismiss menu</VisuallyHidden>
+          <Icon id="close" />
+        </CloseButton>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -42,23 +40,23 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   );
 };
 
-const CloseButtonWrapper = styled.div`
+const CloseButton = styled(UnstyledButton)`
   align-self: flex-end;
+  padding: 16px;
 `;
 
 const MenuBackdrop = styled(DialogOverlay)`
   background: hsla(220, 5%, 40%, 0.8);
-  position: absolute;
+  position: fixed;
   inset: 0;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const MenuDialogContent = styled(DialogContent)`
+  height: 100%;
+  width: 300px;
   background: ${COLORS.white};
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 75px;
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -68,7 +66,7 @@ const MenuDialogContent = styled(DialogContent)`
 const Nav = styled.nav`
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 16px;
 `;
 
 // Taken from Header.js
