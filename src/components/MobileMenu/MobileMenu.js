@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
+import { WEIGHTS } from '../../constants';
 
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
@@ -46,7 +46,7 @@ const CloseButton = styled(UnstyledButton)`
 `;
 
 const MenuBackdrop = styled(DialogOverlay)`
-  background: hsla(220, 5%, 40%, 0.8);
+  background: var(--color-backdrop);
   position: fixed;
   inset: 0;
   display: flex;
@@ -56,7 +56,7 @@ const MenuBackdrop = styled(DialogOverlay)`
 const MenuDialogContent = styled(DialogContent)`
   height: 100%;
   width: 300px;
-  background: ${COLORS.white};
+  background: var(--color-white);
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -74,11 +74,11 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
   font-weight: ${WEIGHTS.medium};
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary-);
   }
 `;
 
@@ -91,7 +91,7 @@ const Footer = styled.footer`
 const FooterLink = styled.a`
   font-size: 0.875rem;
   text-decoration: none;
-  color: ${COLORS.gray[700]};
+  color: var(--color-gray-700);
   font-weight: ${WEIGHTS.normal};
 `;
 
